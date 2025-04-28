@@ -24,66 +24,39 @@
         /// </summary>
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
-            btnSledctFolder = new Button();
-            txtFolderPath = new TextBox();
-            listBoxFiles = new ListBox();
-            bunBackaup = new Button();
+            btnBackaup = new Button();
             txtBackupFlderPath = new TextBox();
             btnSelectBaskupFolder = new Button();
             lstBackupHistory = new ListBox();
             timerBackup = new System.Windows.Forms.Timer(components);
             chkAutoBackup = new CheckBox();
             numBackupInterval = new NumericUpDown();
-            numBackupIntervalLabel = new Label();
+            lblBackupInterval = new Label();
+            lblProfile = new Label();
+            cmbProfile = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)numBackupInterval).BeginInit();
             SuspendLayout();
             // 
-            // btnSledctFolder
+            // btnBackaup
             // 
-            btnSledctFolder.Location = new Point(30, 188);
-            btnSledctFolder.Name = "btnSledctFolder";
-            btnSledctFolder.Size = new Size(75, 23);
-            btnSledctFolder.TabIndex = 0;
-            btnSledctFolder.Text = "参照\r\n";
-            btnSledctFolder.UseVisualStyleBackColor = true;
-            btnSledctFolder.Click += btnSledctFolder_Click;
-            // 
-            // txtFolderPath
-            // 
-            txtFolderPath.Location = new Point(30, 159);
-            txtFolderPath.Name = "txtFolderPath";
-            txtFolderPath.Size = new Size(267, 23);
-            txtFolderPath.TabIndex = 1;
-            // 
-            // listBoxFiles
-            // 
-            listBoxFiles.ItemHeight = 15;
-            listBoxFiles.Location = new Point(0, 0);
-            listBoxFiles.Name = "listBoxFiles";
-            listBoxFiles.Size = new Size(401, 94);
-            listBoxFiles.TabIndex = 0;
-            listBoxFiles.SelectedIndexChanged += listBoxFiles_SelectedIndexChanged;
-            // 
-            // bunBackaup
-            // 
-            bunBackaup.Location = new Point(397, 230);
-            bunBackaup.Name = "bunBackaup";
-            bunBackaup.Size = new Size(75, 23);
-            bunBackaup.TabIndex = 2;
-            bunBackaup.Text = "バックアップ";
-            bunBackaup.UseVisualStyleBackColor = true;
-            bunBackaup.Click += bunBackaup_Click;
+            btnBackaup.Location = new Point(332, 98);
+            btnBackaup.Name = "btnBackaup";
+            btnBackaup.Size = new Size(75, 23);
+            btnBackaup.TabIndex = 2;
+            btnBackaup.Text = "バックアップ";
+            btnBackaup.UseVisualStyleBackColor = true;
+            btnBackaup.Click += btnBackaup_Click;
             // 
             // txtBackupFlderPath
             // 
-            txtBackupFlderPath.Location = new Point(397, 159);
+            txtBackupFlderPath.Location = new Point(110, 12);
             txtBackupFlderPath.Name = "txtBackupFlderPath";
             txtBackupFlderPath.Size = new Size(267, 23);
             txtBackupFlderPath.TabIndex = 3;
             // 
             // btnSelectBaskupFolder
             // 
-            btnSelectBaskupFolder.Location = new Point(397, 188);
+            btnSelectBaskupFolder.Location = new Point(110, 55);
             btnSelectBaskupFolder.Name = "btnSelectBaskupFolder";
             btnSelectBaskupFolder.Size = new Size(75, 23);
             btnSelectBaskupFolder.TabIndex = 4;
@@ -109,7 +82,7 @@
             // chkAutoBackup
             // 
             chkAutoBackup.AutoSize = true;
-            chkAutoBackup.Location = new Point(505, 230);
+            chkAutoBackup.Location = new Point(430, 59);
             chkAutoBackup.Name = "chkAutoBackup";
             chkAutoBackup.Size = new Size(164, 19);
             chkAutoBackup.TabIndex = 6;
@@ -119,7 +92,7 @@
             // 
             // numBackupInterval
             // 
-            numBackupInterval.Location = new Point(505, 255);
+            numBackupInterval.Location = new Point(430, 84);
             numBackupInterval.Maximum = new decimal(new int[] { 1440, 0, 0, 0 });
             numBackupInterval.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numBackupInterval.Name = "numBackupInterval";
@@ -128,30 +101,46 @@
             numBackupInterval.Value = new decimal(new int[] { 5, 0, 0, 0 });
             numBackupInterval.ValueChanged += numBackupInterval_ValueChanged;
             // 
-            // numBackupIntervalLabel
+            // lblBackupInterval
             // 
-            numBackupIntervalLabel.AutoSize = true;
-            numBackupIntervalLabel.Location = new Point(558, 257);
-            numBackupIntervalLabel.Name = "numBackupIntervalLabel";
-            numBackupIntervalLabel.Size = new Size(36, 15);
-            numBackupIntervalLabel.TabIndex = 8;
-            numBackupIntervalLabel.Text = "分ごと";
+            lblBackupInterval.AutoSize = true;
+            lblBackupInterval.Location = new Point(483, 86);
+            lblBackupInterval.Name = "lblBackupInterval";
+            lblBackupInterval.Size = new Size(36, 15);
+            lblBackupInterval.TabIndex = 8;
+            lblBackupInterval.Text = "分ごと";
+            // 
+            // lblProfile
+            // 
+            lblProfile.AutoSize = true;
+            lblProfile.Location = new Point(12, 192);
+            lblProfile.Name = "lblProfile";
+            lblProfile.Size = new Size(59, 15);
+            lblProfile.TabIndex = 9;
+            lblProfile.Text = "プロファイル";
+            // 
+            // cmbProfile
+            // 
+            cmbProfile.FormattingEnabled = true;
+            cmbProfile.Location = new Point(83, 184);
+            cmbProfile.Name = "cmbProfile";
+            cmbProfile.Size = new Size(308, 23);
+            cmbProfile.TabIndex = 10;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(numBackupIntervalLabel);
+            Controls.Add(cmbProfile);
+            Controls.Add(lblProfile);
+            Controls.Add(lblBackupInterval);
             Controls.Add(numBackupInterval);
             Controls.Add(chkAutoBackup);
             Controls.Add(lstBackupHistory);
             Controls.Add(btnSelectBaskupFolder);
             Controls.Add(txtBackupFlderPath);
-            Controls.Add(bunBackaup);
-            Controls.Add(listBoxFiles);
-            Controls.Add(txtFolderPath);
-            Controls.Add(btnSledctFolder);
+            Controls.Add(btnBackaup);
             Name = "Form1";
             Text = "Form1";
             FormClosing += Form1_FormClosing;
@@ -162,17 +151,15 @@
         }
 
         #endregion
-
-        private Button btnSledctFolder;
-        private TextBox txtFolderPath;
-        private ListBox listBoxFiles;
-        private Button bunBackaup;
+        private Button btnBackaup;
         private TextBox txtBackupFlderPath;
         private Button btnSelectBaskupFolder;
         private ListBox lstBackupHistory;
         private System.Windows.Forms.Timer timerBackup;
         private CheckBox chkAutoBackup;
         private NumericUpDown numBackupInterval;
-        private Label numBackupIntervalLabel;
+        private Label lblBackupInterval;
+        private Label lblProfile;
+        private ComboBox cmbProfile;
     }
 }

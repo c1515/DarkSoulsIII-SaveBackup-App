@@ -1,6 +1,7 @@
 namespace バックアップツール {
     public partial class Form1 : Form {
-        private string historyFilePath = "backup_history.txt";
+        private readonly string historyFilePath = "backup_history.txt";
+        private readonly string settingFilePath = "setting.txt";
 
         public Form1() {
             InitializeComponent();
@@ -16,39 +17,70 @@ namespace バックアップツール {
                 }
             }
 
-            int minutes = (int)numBackupInterval.Value;
-            timerBackup.Interval = minutes * 60 * 1000; // 分をミリ秒に変換
-        }
+            if (!File.Exists(settingFilePath)) {
+                File.Create(settingFilePath).Close();
+                txtBackupFlderPath.Text = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "DarkSoulsIII_Backup");
+                int minutes = (int)numBackupInterval.Value;
+                timerBackup.Interval = minutes * 60 * 1000; // 分をミリ秒に変換
+            } else {
+                Dictionary<string, string> settings = new Dictionary<string, string>();
 
-        private void btnSledctFolder_Click(object sender, EventArgs e) {
-            using (FolderBrowserDialog dialog = new FolderBrowserDialog()) {
-                if (dialog.ShowDialog() == DialogResult.OK) {
-                    txtFolderPath.Text = dialog.SelectedPath;
-                    DisplayFiles(dialog.SelectedPath);
+                try {
+                    foreach (var line in File.ReadAllLines(settingFilePath)) {
+                        if (!string.IsNullOrWhiteSpace(line) && line.Contains("=")) {
+                            var parts = line.Split('=', 2);
+                            settings[parts[0].Trim()] = parts[1].Trim();
+                        }
+                    }
+                    txtBackupFlderPath.Text = settings["BackupFolder"];
+                    numBackupInterval.Value = int.Parse(settings["BackupInterval"]);
+                    timerBackup.Interval = (int)numBackupInterval.Value * 60 * 1000;
+                } catch (Exception ex) {
+                    MessageBox.Show($"設定ファイルの読み込み中にエラーが発生しました。\n\n{ex.Message}",
+                        "エラー",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void listBoxFiles_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
 
-        private void DisplayFiles(string folderPath) {
-            listBoxFiles.Items.Clear();
-            string[] files = Directory.GetFiles(folderPath);
-            foreach (var file in files) {
-                listBoxFiles.Items.Add(Path.GetFileName(file));
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
+            using (StreamWriter writer = new StreamWriter(historyFilePath, false)) {
+                foreach (var item in lstBackupHistory.Items) {
+                    writer.WriteLine(item.ToString());
+                }
             }
+
+            try {
+                Dictionary<string, string> settings = new Dictionary<string, string>();
+
+                foreach (var line in File.ReadAllLines(settingFilePath)) {
+                    if (!string.IsNullOrWhiteSpace(line) && line.Contains("=")) {
+                        var parts = line.Split('=', 2);
+                        settings[parts[0].Trim()] = parts[1].Trim();
+                    }
+                }
+
+                // 書き換え
+                settings["BackupFolder"] = txtBackupFlderPath.Text;
+                settings["BackupInterval"] = numBackupInterval.Value.ToString();
+
+                // 保存
+                File.WriteAllLines(settingFilePath, settings.Select(kv => $"{kv.Key}={kv.Value}"));
+
+            } catch (Exception ex) {
+                MessageBox.Show($"設定ファイルの保存中にエラーが発生しました。\n\n{ex.Message}",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
         }
 
-        private void bunBackaup_Click(object sender, EventArgs e) {
-            string sourcePath = txtFolderPath.Text;
+        private void btnBackaup_Click(object sender, EventArgs e) {
+            string sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DarkSoulsIII", "011000010a572517");//注意
             string backupPath = txtBackupFlderPath.Text;
-
-            if (string.IsNullOrEmpty(sourcePath) || string.IsNullOrEmpty(backupPath)) {
-                MessageBox.Show("フォルダを選択してください。");
-                return;
-            }
 
             if (!Directory.Exists(backupPath)) {
                 Directory.CreateDirectory(backupPath);
@@ -82,13 +114,7 @@ namespace バックアップツール {
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
-            using (StreamWriter writer = new StreamWriter(historyFilePath, false)) {
-                foreach (var item in lstBackupHistory.Items) {
-                    writer.WriteLine(item.ToString());
-                }
-            }
-        }
+
 
         private void lstBackupHistory_DoubleClick(object sender, EventArgs e) {
             if (lstBackupHistory.SelectedItem == null)
@@ -133,7 +159,7 @@ namespace バックアップツール {
         }
 
         private void timerBackup_Tick(object sender, EventArgs e) {
-            string sourcePath = txtFolderPath.Text;
+            string sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DarkSoulsIII", "011000010a572517");
             string backupPath = txtBackupFlderPath.Text;
 
             if (string.IsNullOrEmpty(sourcePath) || string.IsNullOrEmpty(backupPath)) {
