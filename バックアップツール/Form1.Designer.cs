@@ -1,5 +1,5 @@
-﻿namespace バックアップツール {
-    partial class Form1 {
+﻿namespace DS3BackupApp {
+    partial class formBackupApp {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -24,55 +24,53 @@
         /// </summary>
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
-            btnBackaup = new Button();
-            txtBackupFlderPath = new TextBox();
-            btnSelectBaskupFolder = new Button();
-            lstBackupHistory = new ListBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBackupApp));
+            btnBackup = new Button();
+            txtBackupFolderPath = new TextBox();
+            btnSelectBackupFolder = new Button();
             timerBackup = new System.Windows.Forms.Timer(components);
             chkAutoBackup = new CheckBox();
             numBackupInterval = new NumericUpDown();
             lblBackupInterval = new Label();
             lblProfile = new Label();
             cmbProfile = new ComboBox();
+            lstSavedata = new ListBox();
+            txtMemo = new TextBox();
+            numMaxAutosave = new NumericUpDown();
+            lblMaxAutosave = new Label();
+            lblBackupFolderPath = new Label();
+            cmbSavename = new ComboBox();
+            lblSavename = new Label();
+            cmbSaveprofile = new ComboBox();
+            lblSaveprofile = new Label();
+            btnDeleteSavedata = new Button();
+            btnLordSavedata = new Button();
+            btnDeleteProfile = new Button();
+            cmbAccount = new ComboBox();
+            lblAccount = new Label();
+            btnChangeName = new Button();
             ((System.ComponentModel.ISupportInitialize)numBackupInterval).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numMaxAutosave).BeginInit();
             SuspendLayout();
             // 
-            // btnBackaup
+            // btnBackup
             // 
-            btnBackaup.Location = new Point(332, 98);
-            btnBackaup.Name = "btnBackaup";
-            btnBackaup.Size = new Size(75, 23);
-            btnBackaup.TabIndex = 2;
-            btnBackaup.Text = "バックアップ";
-            btnBackaup.UseVisualStyleBackColor = true;
-            btnBackaup.Click += btnBackaup_Click;
+            resources.ApplyResources(btnBackup, "btnBackup");
+            btnBackup.Name = "btnBackup";
+            btnBackup.UseVisualStyleBackColor = true;
+            btnBackup.Click += btnBackaup_Click;
             // 
-            // txtBackupFlderPath
+            // txtBackupFolderPath
             // 
-            txtBackupFlderPath.Location = new Point(110, 12);
-            txtBackupFlderPath.Name = "txtBackupFlderPath";
-            txtBackupFlderPath.Size = new Size(267, 23);
-            txtBackupFlderPath.TabIndex = 3;
+            resources.ApplyResources(txtBackupFolderPath, "txtBackupFolderPath");
+            txtBackupFolderPath.Name = "txtBackupFolderPath";
             // 
-            // btnSelectBaskupFolder
+            // btnSelectBackupFolder
             // 
-            btnSelectBaskupFolder.Location = new Point(110, 55);
-            btnSelectBaskupFolder.Name = "btnSelectBaskupFolder";
-            btnSelectBaskupFolder.Size = new Size(75, 23);
-            btnSelectBaskupFolder.TabIndex = 4;
-            btnSelectBaskupFolder.Text = "参照";
-            btnSelectBaskupFolder.UseVisualStyleBackColor = true;
-            btnSelectBaskupFolder.Click += btnSelectBaskupFolder_Click;
-            // 
-            // lstBackupHistory
-            // 
-            lstBackupHistory.FormattingEnabled = true;
-            lstBackupHistory.ItemHeight = 15;
-            lstBackupHistory.Location = new Point(12, 290);
-            lstBackupHistory.Name = "lstBackupHistory";
-            lstBackupHistory.Size = new Size(776, 154);
-            lstBackupHistory.TabIndex = 5;
-            lstBackupHistory.DoubleClick += lstBackupHistory_DoubleClick;
+            resources.ApplyResources(btnSelectBackupFolder, "btnSelectBackupFolder");
+            btnSelectBackupFolder.Name = "btnSelectBackupFolder";
+            btnSelectBackupFolder.UseVisualStyleBackColor = true;
+            btnSelectBackupFolder.Click += btnSelectBackupFolder_Click;
             // 
             // timerBackup
             // 
@@ -81,85 +79,195 @@
             // 
             // chkAutoBackup
             // 
-            chkAutoBackup.AutoSize = true;
-            chkAutoBackup.Location = new Point(430, 59);
+            resources.ApplyResources(chkAutoBackup, "chkAutoBackup");
             chkAutoBackup.Name = "chkAutoBackup";
-            chkAutoBackup.Size = new Size(164, 19);
-            chkAutoBackup.TabIndex = 6;
-            chkAutoBackup.Text = "自動バックアップを有効にする";
             chkAutoBackup.UseVisualStyleBackColor = true;
             chkAutoBackup.CheckedChanged += chkAutoBackup_CheckedChanged;
             // 
             // numBackupInterval
             // 
-            numBackupInterval.Location = new Point(430, 84);
+            resources.ApplyResources(numBackupInterval, "numBackupInterval");
             numBackupInterval.Maximum = new decimal(new int[] { 1440, 0, 0, 0 });
             numBackupInterval.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numBackupInterval.Name = "numBackupInterval";
-            numBackupInterval.Size = new Size(47, 23);
-            numBackupInterval.TabIndex = 7;
             numBackupInterval.Value = new decimal(new int[] { 5, 0, 0, 0 });
             numBackupInterval.ValueChanged += numBackupInterval_ValueChanged;
             // 
             // lblBackupInterval
             // 
-            lblBackupInterval.AutoSize = true;
-            lblBackupInterval.Location = new Point(483, 86);
+            resources.ApplyResources(lblBackupInterval, "lblBackupInterval");
             lblBackupInterval.Name = "lblBackupInterval";
-            lblBackupInterval.Size = new Size(36, 15);
-            lblBackupInterval.TabIndex = 8;
-            lblBackupInterval.Text = "分ごと";
             // 
             // lblProfile
             // 
-            lblProfile.AutoSize = true;
-            lblProfile.Location = new Point(12, 192);
+            resources.ApplyResources(lblProfile, "lblProfile");
             lblProfile.Name = "lblProfile";
-            lblProfile.Size = new Size(59, 15);
-            lblProfile.TabIndex = 9;
-            lblProfile.Text = "プロファイル";
             // 
             // cmbProfile
             // 
+            cmbProfile.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProfile.FormattingEnabled = true;
-            cmbProfile.Location = new Point(83, 184);
+            resources.ApplyResources(cmbProfile, "cmbProfile");
             cmbProfile.Name = "cmbProfile";
-            cmbProfile.Size = new Size(308, 23);
-            cmbProfile.TabIndex = 10;
+            cmbProfile.SelectedIndexChanged += cmbProfile_SelectedIndexChanged;
             // 
-            // Form1
+            // lstSavedata
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            lstSavedata.FormattingEnabled = true;
+            resources.ApplyResources(lstSavedata, "lstSavedata");
+            lstSavedata.Name = "lstSavedata";
+            lstSavedata.SelectedIndexChanged += lstSavedata_SelectedIndexChanged;
+            lstSavedata.DoubleClick += lstSavedata_DoubleClick;
+            // 
+            // txtMemo
+            // 
+            resources.ApplyResources(txtMemo, "txtMemo");
+            txtMemo.Name = "txtMemo";
+            txtMemo.Leave += txtMemo_Leave;
+            // 
+            // numMaxAutosave
+            // 
+            resources.ApplyResources(numMaxAutosave, "numMaxAutosave");
+            numMaxAutosave.Name = "numMaxAutosave";
+            numMaxAutosave.Value = new decimal(new int[] { 5, 0, 0, 0 });
+            // 
+            // lblMaxAutosave
+            // 
+            resources.ApplyResources(lblMaxAutosave, "lblMaxAutosave");
+            lblMaxAutosave.Name = "lblMaxAutosave";
+            // 
+            // lblBackupFolderPath
+            // 
+            resources.ApplyResources(lblBackupFolderPath, "lblBackupFolderPath");
+            lblBackupFolderPath.Name = "lblBackupFolderPath";
+            // 
+            // cmbSavename
+            // 
+            cmbSavename.FormattingEnabled = true;
+            resources.ApplyResources(cmbSavename, "cmbSavename");
+            cmbSavename.Name = "cmbSavename";
+            // 
+            // lblSavename
+            // 
+            resources.ApplyResources(lblSavename, "lblSavename");
+            lblSavename.Name = "lblSavename";
+            // 
+            // cmbSaveprofile
+            // 
+            cmbSaveprofile.FormattingEnabled = true;
+            resources.ApplyResources(cmbSaveprofile, "cmbSaveprofile");
+            cmbSaveprofile.Name = "cmbSaveprofile";
+            cmbSaveprofile.SelectedIndexChanged += cmbSaveprofile_SelectedIndexChanged;
+            cmbSaveprofile.KeyPress += cmbSaveprofile_KeyPress;
+            // 
+            // lblSaveprofile
+            // 
+            resources.ApplyResources(lblSaveprofile, "lblSaveprofile");
+            lblSaveprofile.Name = "lblSaveprofile";
+            // 
+            // btnDeleteSavedata
+            // 
+            resources.ApplyResources(btnDeleteSavedata, "btnDeleteSavedata");
+            btnDeleteSavedata.Name = "btnDeleteSavedata";
+            btnDeleteSavedata.UseVisualStyleBackColor = true;
+            btnDeleteSavedata.Click += btnDeleteSavedata_Click;
+            // 
+            // btnLordSavedata
+            // 
+            resources.ApplyResources(btnLordSavedata, "btnLordSavedata");
+            btnLordSavedata.Name = "btnLordSavedata";
+            btnLordSavedata.UseVisualStyleBackColor = true;
+            btnLordSavedata.Click += btnLordSavedata_Click;
+            // 
+            // btnDeleteProfile
+            // 
+            resources.ApplyResources(btnDeleteProfile, "btnDeleteProfile");
+            btnDeleteProfile.Name = "btnDeleteProfile";
+            btnDeleteProfile.UseVisualStyleBackColor = true;
+            btnDeleteProfile.Click += btnDeleteProfile_Click;
+            // 
+            // cmbAccount
+            // 
+            cmbAccount.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAccount.FormattingEnabled = true;
+            resources.ApplyResources(cmbAccount, "cmbAccount");
+            cmbAccount.Name = "cmbAccount";
+            cmbAccount.SelectedIndexChanged += cmbAccount_SelectedIndexChanged;
+            // 
+            // lblAccount
+            // 
+            resources.ApplyResources(lblAccount, "lblAccount");
+            lblAccount.Name = "lblAccount";
+            // 
+            // btnChangeName
+            // 
+            resources.ApplyResources(btnChangeName, "btnChangeName");
+            btnChangeName.Name = "btnChangeName";
+            btnChangeName.UseVisualStyleBackColor = true;
+            btnChangeName.Click += btnChangeName_Click;
+            // 
+            // formBackupApp
+            // 
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            Controls.Add(btnChangeName);
+            Controls.Add(lblAccount);
+            Controls.Add(cmbAccount);
+            Controls.Add(btnDeleteProfile);
+            Controls.Add(btnLordSavedata);
+            Controls.Add(btnDeleteSavedata);
+            Controls.Add(lblSaveprofile);
+            Controls.Add(cmbSaveprofile);
+            Controls.Add(lblSavename);
+            Controls.Add(cmbSavename);
+            Controls.Add(lblBackupFolderPath);
+            Controls.Add(lblMaxAutosave);
+            Controls.Add(numMaxAutosave);
+            Controls.Add(txtMemo);
+            Controls.Add(lstSavedata);
             Controls.Add(cmbProfile);
             Controls.Add(lblProfile);
             Controls.Add(lblBackupInterval);
             Controls.Add(numBackupInterval);
             Controls.Add(chkAutoBackup);
-            Controls.Add(lstBackupHistory);
-            Controls.Add(btnSelectBaskupFolder);
-            Controls.Add(txtBackupFlderPath);
-            Controls.Add(btnBackaup);
-            Name = "Form1";
-            Text = "Form1";
+            Controls.Add(btnSelectBackupFolder);
+            Controls.Add(txtBackupFolderPath);
+            Controls.Add(btnBackup);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "formBackupApp";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numBackupInterval).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numMaxAutosave).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button btnBackaup;
-        private TextBox txtBackupFlderPath;
-        private Button btnSelectBaskupFolder;
-        private ListBox lstBackupHistory;
+        private Button btnBackup;
+        private TextBox txtBackupFolderPath;
+        private Button btnSelectBackupFolder;
         private System.Windows.Forms.Timer timerBackup;
         private CheckBox chkAutoBackup;
         private NumericUpDown numBackupInterval;
         private Label lblBackupInterval;
         private Label lblProfile;
         private ComboBox cmbProfile;
+        private ListBox lstSavedata;
+        private TextBox txtMemo;
+        private NumericUpDown numMaxAutosave;
+        private Label lblMaxAutosave;
+        private Label lblBackupFolderPath;
+        private ComboBox cmbSavename;
+        private Label lblSavename;
+        private ComboBox cmbSaveprofile;
+        private Label lblSaveprofile;
+        private Button btnDeleteSavedata;
+        private Button btnLordSavedata;
+        private Button btnDeleteProfile;
+        private ComboBox cmbAccount;
+        private Label lblAccount;
+        private Button btnChangeName;
     }
 }
