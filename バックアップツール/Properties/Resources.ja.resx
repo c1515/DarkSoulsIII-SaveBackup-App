@@ -118,259 +118,259 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_CopyEx" xml:space="preserve">
-    <value>An unexpected error occurred while copying a file.
+    <value>ファイルのコピー中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_DeleteEx" xml:space="preserve">
-    <value>An unexpected error occurred while deleting a folder.
+    <value>フォルダの削除中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_InvalidFormat" xml:space="preserve">
-    <value>The format of the selected item is incorrect.</value>
+    <value>選択されたアイテムのフォーマットが正しくありません。</value>
   </data>
   <data name="Error_MemoCreateEx" xml:space="preserve">
-    <value>An error occurred while creating the note file.
+    <value>メモファイルの作成中にエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_MemoWriteEx" xml:space="preserve">
-    <value>An unexpected error occurred while saving the note.
+    <value>メモの保存中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_EmptySavename" xml:space="preserve">
-    <value>Enter a save name.</value>
+    <value>セーブ名を入力してください。</value>
   </data>
   <data name="Error_NotfoundBackupfolder" xml:space="preserve">
-    <value>The backup folder does not exist.</value>
+    <value>バックアップフォルダが存在しません。</value>
   </data>
   <data name="Error_NotfoundSavefolder" xml:space="preserve">
-    <value>Could not find the folder to save the save data.
-Please start the game and create the save data.</value>
+    <value>セーブデータの保存フォルダが見つかりませんでした。
+ゲームを起動してセーブデータを作成してください。</value>
   </data>
   <data name="Error_NotfoundSavefolderForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because the folder where the saved data was saved could not be found.
-Please start the game and create the save data.</value>
+    <value>セーブデータの保存フォルダが見つからなかったため、自動バックアップを実行できませんでした。
+ゲームを起動してセーブデータを作成してください。</value>
   </data>
   <data name="Error_MemoReadEx" xml:space="preserve">
-    <value>An error occurred while loading the note.
+    <value>メモの読み込み中にエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_NoItemSelected" xml:space="preserve">
-    <value>Select the saved data.</value>
+    <value>セーブデータを選択してください。</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>確認</value>
   </data>
   <data name="Confirm_DeleteSavedata" xml:space="preserve">
-    <value>Do you want to delete this saved data?
+    <value>このセーブデータを削除しますか？
 
-Saved data: {0}</value>
+セーブデータ: {0}</value>
   </data>
   <data name="Confirm_Overwrite" xml:space="preserve">
-    <value>Override?
+    <value>上書きしますか？
 
-Saved data: {0}</value>
+セーブデータ: {0}</value>
   </data>
   <data name="Complite_Backup" xml:space="preserve">
-    <value>Backup is complete.</value>
+    <value>バックアップが完了しました。</value>
   </data>
   <data name="Confirm_Restore" xml:space="preserve">
-    <value>Do you want to restore this saved data?
+    <value>このセーブデータを復元しますか？
 
-Saved data: {0}</value>
+セーブデータ: {0}</value>
   </data>
   <data name="Complite_Restore" xml:space="preserve">
-    <value>Restore is complete.</value>
+    <value>復元が完了しました。</value>
   </data>
   <data name="Info_SelectSavedata" xml:space="preserve">
-    <value>note box
-Select the saved data.</value>
+    <value>メモ欄
+セーブデータを選択してください。</value>
   </data>
   <data name="Warning_Close" xml:space="preserve">
-    <value>An error occurred while saving settings.
-If you exit at this point, your settings may be lost.
-Would you like to try saving again?
+    <value>設定の保存中にエラーが発生しました。
+このまま終了すると設定が失われる可能性があります。
+もう一度保存を試みますか？
 
-Error description: {0}</value>
+エラー内容: {0}</value>
   </data>
   <data name="Confirm_DeleteProfile" xml:space="preserve">
-    <value>All saved data stored in this profile will also be deleted.
-Do you want to delete the profile?
+    <value>このプロファイルに保存されているセーブデータもすべて削除されます。
+プロファイルを削除しますか？
 
-Profile: {0}</value>
+プロファイル: {0}</value>
   </data>
   <data name="Error_EmptyBackupPath" xml:space="preserve">
-    <value>Select a backup folder.</value>
+    <value>バックアップフォルダを選択してください。</value>
   </data>
   <data name="Error_EmptyBackupPathForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because no backup folder was selected.</value>
+    <value>バックアップフォルダが選択されていないため、自動バックアップを実行できませんでした。</value>
   </data>
   <data name="Error_MemoWriteEmptyBackupPath" xml:space="preserve">
-    <value>The note was not saved.
-Please select a backup folder.</value>
+    <value>メモが保存されませんでした。
+バックアップフォルダを選択してください。</value>
   </data>
   <data name="Error_MemoReadNoBackupPath" xml:space="preserve">
-    <value>Could not load note.
-Please select a backup folder.</value>
+    <value>メモを読み込めませんでした。
+バックアップフォルダを選択してください。</value>
   </data>
   <data name="Info_Account" xml:space="preserve">
-    <value>Accounts used: {0}</value>
+    <value>使用するアカウント: {0}</value>
   </data>
   <data name="Error_NoSavePath" xml:space="preserve">
-    <value>Unexpected error: folder for saved data is not set</value>
+    <value>予期しないエラー: セーブデータの保存フォルダが未設定</value>
   </data>
   <data name="Error_NotFoundAccount" xml:space="preserve">
-    <value>The save data for the selected account could not be found.
-Please select an account again.</value>
+    <value>選択されたアカウントのセーブデータが見つかりませんでした。
+アカウントを選び直してください。</value>
   </data>
   <data name="Prompt_EnterNewName" xml:space="preserve">
-    <value>Please enter a new name.</value>
+    <value>新しい名前を入力してください。</value>
   </data>
   <data name="Form_ChangeName" xml:space="preserve">
-    <value>Name Change</value>
+    <value>名前の変更</value>
   </data>
   <data name="Error_NameAlreadyExists" xml:space="preserve">
-    <value>The name is already in use.</value>
+    <value>既に使われている名前です。</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Information</value>
+    <value>情報</value>
   </data>
   <data name="Info_Rename" xml:space="preserve">
-    <value>Renamed from {0} to {1}.</value>
+    <value>{0} から {1} に名前を変更しました。</value>
   </data>
   <data name="Error_NotFoundMemo" xml:space="preserve">
-    <value>Note file does not exist.</value>
+    <value>メモファイルが存在しません。</value>
   </data>
   <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>キャンセル</value>
   </data>
   <data name="Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>警告</value>
   </data>
   <data name="Error_CreateEx" xml:space="preserve">
-    <value>An unexpected error occurred while creating the folder.
+    <value>フォルダの作成中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_UnauthorizedAccess" xml:space="preserve">
-    <value>You do not have access privileges.
+    <value>アクセス権限がありません。
 
 {0}</value>
   </data>
   <data name="Error_SetLastWriteTimeEx" xml:space="preserve">
-    <value>An unexpected error occurred while changing the modification date of a folder.
+    <value>フォルダの更新日時の変更中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_InvalidBackupPath" xml:space="preserve">
-    <value>The backup folder path specified is invalid.</value>
+    <value>指定されたバックアップフォルダのパスは無効です。</value>
   </data>
   <data name="Error_InvalidSavePath" xml:space="preserve">
-    <value>Invalid save data folder path.</value>
+    <value>セーブデータのフォルダのパスが無効です。</value>
   </data>
   <data name="Error_InvalidSavePathForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because the folder path for the saved data is invalid.</value>
+    <value>セーブデータのフォルダのパスが無効のため、自動バックアップを実行できませんでした。</value>
   </data>
   <data name="Error_InvalidBackupPathForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because the specified backup folder path is invalid.</value>
+    <value>指定されたバックアップフォルダのパスは無効のため、自動バックアップを実行できませんでした。</value>
   </data>
   <data name="Error_NotfoundBackupfolderForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because the backup folder does not exist.</value>
+    <value>バックアップフォルダが存在しないため、自動バックアップを実行できませんでした。</value>
   </data>
   <data name="Error_ArgumentPath" xml:space="preserve">
-    <value>An invalid path was specified.
+    <value>無効なパスが指定されました。
 
 {0}</value>
   </data>
   <data name="Error_PathTooLong" xml:space="preserve">
-    <value>The path is too long.
+    <value>パスが長すぎます。
 
 {0}</value>
   </data>
   <data name="Error_IO" xml:space="preserve">
-    <value>I/O error occurred.
+    <value>I/O エラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_NotSupportedPath" xml:space="preserve">
-    <value>Unsupported path format.
+    <value>サポートされていないパス形式です。
 
 {0}</value>
   </data>
   <data name="Error_Security" xml:space="preserve">
-    <value>Lack of security permissions.
+    <value>セキュリティ許可が不足しています。
 
 {0}</value>
   </data>
   <data name="Error_CreateDirectoryEx" xml:space="preserve">
-    <value>An unexpected error occurred while creating the folder.
+    <value>フォルダの作成中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_InvalidBackupPathChars" xml:space="preserve">
-    <value>The path to the specified backup folder contains invalid characters.</value>
+    <value>指定されたバックアップフォルダのパスに無効な文字が含まれています。</value>
   </data>
   <data name="Error_InvalidSavePathChars" xml:space="preserve">
-    <value>The save data folder path contains invalid characters.</value>
+    <value>セーブデータのフォルダのパスに無効な文字が含まれています。</value>
   </data>
   <data name="Error_InvalidSavePathCharsForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because the save data folder path contained invalid characters.</value>
+    <value>セーブデータのフォルダのパスに無効な文字が含まれているため、自動バックアップを実行できませんでした。。</value>
   </data>
   <data name="Error_InvalidBackupPathCharsForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because the specified backup folder path contains invalid characters.</value>
+    <value>指定されたバックアップフォルダのパスに無効な文字が含まれているため、自動バックアップを実行できませんでした。</value>
   </data>
   <data name="Error_BackupPathTooLong" xml:space="preserve">
-    <value>Backup folder path is too long.</value>
+    <value>バックアップフォルダのパスが長すぎます。</value>
   </data>
   <data name="Error_BackupPathTooLongForAuto" xml:space="preserve">
-    <value>Automatic backup could not be performed because the backup folder path is too long.</value>
+    <value>バックアップフォルダのパスが長すぎるため、自動バックアップを実行できませんでした。</value>
   </data>
   <data name="Error_EmptyProfile" xml:space="preserve">
-    <value>Please select or enter a profile.</value>
+    <value>プロファイルを選択するか入力してください。</value>
   </data>
   <data name="Error_NotFoundSavedata" xml:space="preserve">
-    <value>Backed up save data does not exist.</value>
+    <value>バックアップされたセーブデータが存在しません。</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>エラー</value>
   </data>
   <data name="Error_MemoWrite" xml:space="preserve">
-    <value>The note was not saved.</value>
+    <value>メモが保存されませんでした。</value>
   </data>
   <data name="Error_DirectoryNotFound" xml:space="preserve">
-    <value>The directory does not exist.
+    <value>ディレクトリが存在しません。
 
 {0}</value>
   </data>
   <data name="Error_FileNotFound" xml:space="preserve">
-    <value>File does not exist.
+    <value>ファイルが存在しません。
 
 {0}</value>
   </data>
   <data name="Error_MoveEx" xml:space="preserve">
-    <value>An unexpected error occurred during renaming.
+    <value>名前の変更中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_GetDirectoriesEx" xml:space="preserve">
-    <value>An unexpected error occurred while retrieving the directory.
+    <value>ディレクトリの取得中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_CreateFileEx" xml:space="preserve">
-    <value>An unexpected error occurred while creating the file.
+    <value>ファイルの作成中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>
   <data name="Error_GetLastWriteTimeEx" xml:space="preserve">
-    <value>An unexpected error occurred while retrieving the modification date of a folder.
+    <value>フォルダの更新日時の取得中に予期しないエラーが発生しました。
 
 {0}</value>
   </data>

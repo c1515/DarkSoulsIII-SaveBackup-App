@@ -165,6 +165,9 @@ namespace DS3BackupApp.util {
                 }
                 if (!IsProfileMatch) {
                     cmbProfile.SelectedIndex = 0;
+                    if (cmbProfile.Items.Count > 1 && cmbProfile.Text == AppConstants.AutosaveProfile) {
+                        cmbProfile.SelectedIndex = 1;
+                    }
                 }
             } else {
                 cmbProfile.Items.Add(AppConstants.DefaultProfile);

@@ -22,14 +22,14 @@ namespace DS3BackupApp.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Resources___コピー {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Resources___コピー() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DS3BackupApp.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DS3BackupApp.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DS3BackupApp.Properties.Resources - コピー", typeof(Resources___コピー).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Cancel に類似しているローカライズされた文字列を検索します。
+        ///   キャンセル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Button_Cancel {
             get {
@@ -79,7 +79,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Backup is complete. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップが完了しました。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Complite_Backup {
             get {
@@ -88,7 +88,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Restore is complete. に類似しているローカライズされた文字列を検索します。
+        ///   復元が完了しました。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Complite_Restore {
             get {
@@ -97,7 +97,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Confirm に類似しているローカライズされた文字列を検索します。
+        ///   確認 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Confirm {
             get {
@@ -106,10 +106,10 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   All saved data stored in this profile will also be deleted.
-        ///Do you want to delete the profile?
+        ///   このプロファイルに保存されているセーブデータもすべて削除されます。
+        ///プロファイルを削除しますか？
         ///
-        ///Profile: {0} に類似しているローカライズされた文字列を検索します。
+        ///プロファイル: {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Confirm_DeleteProfile {
             get {
@@ -118,9 +118,9 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Do you want to delete this saved data?
+        ///   このセーブデータを削除しますか？
         ///
-        ///Saved data: {0} に類似しているローカライズされた文字列を検索します。
+        ///セーブデータ: {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Confirm_DeleteSavedata {
             get {
@@ -129,9 +129,9 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Override?
+        ///   上書きしますか？
         ///
-        ///Saved data: {0} に類似しているローカライズされた文字列を検索します。
+        ///セーブデータ: {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Confirm_Overwrite {
             get {
@@ -140,9 +140,9 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Do you want to restore this saved data?
+        ///   このセーブデータを復元しますか？
         ///
-        ///Saved data: {0} に類似しているローカライズされた文字列を検索します。
+        ///セーブデータ: {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Confirm_Restore {
             get {
@@ -151,7 +151,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Error に類似しているローカライズされた文字列を検索します。
+        ///   エラー に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error {
             get {
@@ -160,7 +160,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An invalid path was specified.
+        ///   無効なパスが指定されました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -171,7 +171,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Backup folder path is too long. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップフォルダのパスが長すぎます。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_BackupPathTooLong {
             get {
@@ -180,7 +180,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because the backup folder path is too long. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップフォルダのパスが長すぎるため、自動バックアップを実行できませんでした。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_BackupPathTooLongForAuto {
             get {
@@ -189,7 +189,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while copying a file.
+        ///   ファイルのコピー中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -200,7 +200,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while creating the folder.
+        ///   フォルダの作成中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -211,7 +211,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while creating the folder.
+        ///   フォルダの作成中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -222,7 +222,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while creating the file.
+        ///   ファイルの作成中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -233,7 +233,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while deleting a folder.
+        ///   フォルダの削除中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -244,7 +244,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The directory does not exist.
+        ///   ディレクトリが存在しません。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -255,7 +255,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Select a backup folder. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップフォルダを選択してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_EmptyBackupPath {
             get {
@@ -264,7 +264,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because no backup folder was selected. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップフォルダが選択されていないため、自動バックアップを実行できませんでした。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_EmptyBackupPathForAuto {
             get {
@@ -273,7 +273,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Please select or enter a profile. に類似しているローカライズされた文字列を検索します。
+        ///   プロファイルを選択するか入力してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_EmptyProfile {
             get {
@@ -282,7 +282,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Enter a save name. に類似しているローカライズされた文字列を検索します。
+        ///   セーブ名を入力してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_EmptySavename {
             get {
@@ -291,7 +291,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   File does not exist.
+        ///   ファイルが存在しません。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -302,7 +302,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while retrieving the directory.
+        ///   ディレクトリの取得中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -313,7 +313,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while retrieving the modification date of a folder.
+        ///   フォルダの更新日時の取得中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -324,7 +324,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The backup folder path specified is invalid. に類似しているローカライズされた文字列を検索します。
+        ///   指定されたバックアップフォルダのパスは無効です。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidBackupPath {
             get {
@@ -333,7 +333,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The path to the specified backup folder contains invalid characters. に類似しているローカライズされた文字列を検索します。
+        ///   指定されたバックアップフォルダのパスに無効な文字が含まれています。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidBackupPathChars {
             get {
@@ -342,7 +342,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because the specified backup folder path contains invalid characters. に類似しているローカライズされた文字列を検索します。
+        ///   指定されたバックアップフォルダのパスに無効な文字が含まれているため、自動バックアップを実行できませんでした。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidBackupPathCharsForAuto {
             get {
@@ -351,7 +351,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because the specified backup folder path is invalid. に類似しているローカライズされた文字列を検索します。
+        ///   指定されたバックアップフォルダのパスは無効のため、自動バックアップを実行できませんでした。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidBackupPathForAuto {
             get {
@@ -360,7 +360,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The format of the selected item is incorrect. に類似しているローカライズされた文字列を検索します。
+        ///   選択されたアイテムのフォーマットが正しくありません。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidFormat {
             get {
@@ -369,7 +369,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Invalid save data folder path. に類似しているローカライズされた文字列を検索します。
+        ///   セーブデータのフォルダのパスが無効です。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidSavePath {
             get {
@@ -378,7 +378,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The save data folder path contains invalid characters. に類似しているローカライズされた文字列を検索します。
+        ///   セーブデータのフォルダのパスに無効な文字が含まれています。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidSavePathChars {
             get {
@@ -387,7 +387,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because the save data folder path contained invalid characters. に類似しているローカライズされた文字列を検索します。
+        ///   セーブデータのフォルダのパスに無効な文字が含まれているため、自動バックアップを実行できませんでした。。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidSavePathCharsForAuto {
             get {
@@ -396,7 +396,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because the folder path for the saved data is invalid. に類似しているローカライズされた文字列を検索します。
+        ///   セーブデータのフォルダのパスが無効のため、自動バックアップを実行できませんでした。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_InvalidSavePathForAuto {
             get {
@@ -405,7 +405,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   I/O error occurred.
+        ///   I/O エラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -416,7 +416,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An error occurred while creating the note file.
+        ///   メモファイルの作成中にエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -427,7 +427,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An error occurred while loading the note.
+        ///   メモの読み込み中にエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -438,8 +438,8 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Could not load note.
-        ///Please select a backup folder. に類似しているローカライズされた文字列を検索します。
+        ///   メモを読み込めませんでした。
+        ///バックアップフォルダを選択してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_MemoReadNoBackupPath {
             get {
@@ -448,7 +448,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The note was not saved. に類似しているローカライズされた文字列を検索します。
+        ///   メモが保存されませんでした。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_MemoWrite {
             get {
@@ -457,8 +457,8 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The note was not saved.
-        ///Please select a backup folder. に類似しているローカライズされた文字列を検索します。
+        ///   メモが保存されませんでした。
+        ///バックアップフォルダを選択してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_MemoWriteEmptyBackupPath {
             get {
@@ -467,7 +467,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while saving the note.
+        ///   メモの保存中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -478,7 +478,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred during renaming.
+        ///   名前の変更中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -489,7 +489,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The name is already in use. に類似しているローカライズされた文字列を検索します。
+        ///   既に使われている名前です。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NameAlreadyExists {
             get {
@@ -498,7 +498,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Select the saved data. に類似しているローカライズされた文字列を検索します。
+        ///   セーブデータを選択してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NoItemSelected {
             get {
@@ -507,7 +507,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Unexpected error: folder for saved data is not set に類似しているローカライズされた文字列を検索します。
+        ///   予期しないエラー: セーブデータの保存フォルダが未設定 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NoSavePath {
             get {
@@ -516,8 +516,8 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The save data for the selected account could not be found.
-        ///Please select an account again. に類似しているローカライズされた文字列を検索します。
+        ///   選択されたアカウントのセーブデータが見つかりませんでした。
+        ///アカウントを選び直してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NotFoundAccount {
             get {
@@ -526,7 +526,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The backup folder does not exist. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップフォルダが存在しません。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NotfoundBackupfolder {
             get {
@@ -535,7 +535,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because the backup folder does not exist. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップフォルダが存在しないため、自動バックアップを実行できませんでした。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NotfoundBackupfolderForAuto {
             get {
@@ -544,7 +544,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Note file does not exist. に類似しているローカライズされた文字列を検索します。
+        ///   メモファイルが存在しません。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NotFoundMemo {
             get {
@@ -553,7 +553,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Backed up save data does not exist. に類似しているローカライズされた文字列を検索します。
+        ///   バックアップされたセーブデータが存在しません。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NotFoundSavedata {
             get {
@@ -562,8 +562,8 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Could not find the folder to save the save data.
-        ///Please start the game and create the save data. に類似しているローカライズされた文字列を検索します。
+        ///   セーブデータの保存フォルダが見つかりませんでした。
+        ///ゲームを起動してセーブデータを作成してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NotfoundSavefolder {
             get {
@@ -572,8 +572,8 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Automatic backup could not be performed because the folder where the saved data was saved could not be found.
-        ///Please start the game and create the save data. に類似しているローカライズされた文字列を検索します。
+        ///   セーブデータの保存フォルダが見つからなかったため、自動バックアップを実行できませんでした。
+        ///ゲームを起動してセーブデータを作成してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Error_NotfoundSavefolderForAuto {
             get {
@@ -582,7 +582,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Unsupported path format.
+        ///   サポートされていないパス形式です。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -593,7 +593,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   The path is too long.
+        ///   パスが長すぎます。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -604,7 +604,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Lack of security permissions.
+        ///   セキュリティ許可が不足しています。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -615,7 +615,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An unexpected error occurred while changing the modification date of a folder.
+        ///   フォルダの更新日時の変更中に予期しないエラーが発生しました。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -626,7 +626,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   You do not have access privileges.
+        ///   アクセス権限がありません。
         ///
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -637,7 +637,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Name Change に類似しているローカライズされた文字列を検索します。
+        ///   名前の変更 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Form_ChangeName {
             get {
@@ -646,7 +646,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Information に類似しているローカライズされた文字列を検索します。
+        ///   情報 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Info {
             get {
@@ -655,7 +655,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Accounts used: {0} に類似しているローカライズされた文字列を検索します。
+        ///   使用するアカウント: {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Info_Account {
             get {
@@ -664,7 +664,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Renamed from {0} to {1}. に類似しているローカライズされた文字列を検索します。
+        ///   {0} から {1} に名前を変更しました。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Info_Rename {
             get {
@@ -673,8 +673,8 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   note box
-        ///Select the saved data. に類似しているローカライズされた文字列を検索します。
+        ///   メモ欄
+        ///セーブデータを選択してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Info_SelectSavedata {
             get {
@@ -683,7 +683,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Please enter a new name. に類似しているローカライズされた文字列を検索します。
+        ///   新しい名前を入力してください。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Prompt_EnterNewName {
             get {
@@ -692,7 +692,7 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   Warning に類似しているローカライズされた文字列を検索します。
+        ///   警告 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Warning {
             get {
@@ -701,11 +701,11 @@ namespace DS3BackupApp.Properties {
         }
         
         /// <summary>
-        ///   An error occurred while saving settings.
-        ///If you exit at this point, your settings may be lost.
-        ///Would you like to try saving again?
+        ///   設定の保存中にエラーが発生しました。
+        ///このまま終了すると設定が失われる可能性があります。
+        ///もう一度保存を試みますか？
         ///
-        ///Error description: {0} に類似しているローカライズされた文字列を検索します。
+        ///エラー内容: {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Warning_Close {
             get {

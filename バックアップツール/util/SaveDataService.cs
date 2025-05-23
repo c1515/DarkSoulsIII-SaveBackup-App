@@ -45,7 +45,7 @@
                     cmbProfile.Items.Add(cmbSaveprofile.Text.Trim());
                 }
             } else {
-                if (!MessageHepler.Confirm(Properties.Resources.Confirm_Overwrite)) {
+                if (!MessageHepler.Confirm(string.Format(Properties.Resources.Confirm_Overwrite, cmbSavename.Text.Trim()))) {
                     return false;
                 }
 

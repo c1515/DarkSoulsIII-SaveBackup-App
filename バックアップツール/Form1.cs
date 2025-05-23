@@ -1,11 +1,13 @@
 using DS3BackupApp.util;
 
 namespace DS3BackupApp {
-    public partial class formBackupApp : Form {
+    public partial class FormBackupApp : Form {
         private string saveFolderPath = "";
         private bool IsLoading = true;
+        private bool IsAccuountChanged = false;
+        private bool IsBackupPathChanged = false;
 
-        public formBackupApp() {
+        public FormBackupApp() {
             InitializeComponent();
         }
 
@@ -28,7 +30,7 @@ namespace DS3BackupApp {
                     MessageBox.Show(string.Format(Properties.Resources.Info_Account, saveFolderPath));
                 }
 
-                ProfileService.SetProfile(txtBackupFolderPath.Text, cmbSaveprofile, cmbProfile);
+                ProfileService.SetProfile(txtBackupFolderPath.Text.Trim(), cmbSaveprofile, cmbProfile);
 
                 Properties.Settings.Default.IsFirstRun = false;
                 Properties.Settings.Default.Save();
@@ -39,8 +41,8 @@ namespace DS3BackupApp {
                 saveFolderPath = Properties.Settings.Default.SaveFolder;
                 numMaxAutosave.Value = Properties.Settings.Default.MaxAutosave;
 
-                if (!string.IsNullOrEmpty(txtBackupFolderPath.Text)) {
-                    ProfileService.SetProfile(txtBackupFolderPath.Text, cmbSaveprofile, cmbProfile);
+                if (!string.IsNullOrEmpty(txtBackupFolderPath.Text.Trim())) {
+                    ProfileService.SetProfile(txtBackupFolderPath.Text.Trim(), cmbSaveprofile, cmbProfile);
                 }
 
                 string[] accountFolders = AccountHelper.GetAccounFolders();
@@ -55,7 +57,7 @@ namespace DS3BackupApp {
             bool retry = false;
             do {
                 try {
-                    Properties.Settings.Default.BackupFolder = txtBackupFolderPath.Text;
+                    Properties.Settings.Default.BackupFolder = txtBackupFolderPath.Text.Trim();
                     Properties.Settings.Default.BackupInterval = numBackupInterval.Value;
                     Properties.Settings.Default.SaveFolder = saveFolderPath;
                     Properties.Settings.Default.MaxAutosave = numMaxAutosave.Value;
@@ -72,7 +74,7 @@ namespace DS3BackupApp {
         }
 
         private void btnBackaup_Click(object sender, EventArgs e) {
-            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text, false, saveFolderPath)) {
+            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), false, saveFolderPath)) {
                 return;
             }
 
@@ -86,7 +88,7 @@ namespace DS3BackupApp {
                 return;
             }
 
-            string backupPath = Path.Combine(txtBackupFolderPath.Text, cmbSaveprofile.Text.Trim(), cmbSavename.Text.Trim());
+            string backupPath = Path.Combine(txtBackupFolderPath.Text.Trim(), cmbSaveprofile.Text.Trim(), cmbSavename.Text.Trim());
             if (!PathHelper.ValidatePath(backupPath, false)) {
                 return;
             }
@@ -98,7 +100,7 @@ namespace DS3BackupApp {
             SavedataService.Backup(backupPath, saveFolderPath);
 
             if (cmbProfile.Text.Trim() == cmbSaveprofile.Text.Trim()) {
-                ProfileService.SetSavedata(txtBackupFolderPath.Text, cmbProfile.Text.Trim(), lstSavedata);
+                ProfileService.SetSavedata(txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim(), lstSavedata);
             }
 
             MessageHepler.Info(Properties.Resources.Complite_Backup);
@@ -107,20 +109,22 @@ namespace DS3BackupApp {
         private void btnSelectBackupFolder_Click(object sender, EventArgs e) {
             using (FolderBrowserDialog dialog = new()) {
                 if (dialog.ShowDialog() == DialogResult.OK) {
-                    txtBackupFolderPath.Text = Path.Combine(dialog.SelectedPath, AppConstants.TopBackupFolder);
+                    txtBackupFolderPath.Text = Path.Combine(dialog.SelectedPath, AppConstants.TopBackupFolder, AppConstants.DarkSoulsIII, cmbAccount.Text.Trim());//別げーのときはここを変更する
                 }
             }
 
-            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text, false)) {
+            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), false)) {
                 txtBackupFolderPath.Clear();
                 return;
             }
 
-            ProfileService.SetProfile(txtBackupFolderPath.Text, cmbSaveprofile, cmbProfile);
+            IsBackupPathChanged = true;
+            ProfileService.SetProfile(txtBackupFolderPath.Text.Trim(), cmbSaveprofile, cmbProfile);
+            IsBackupPathChanged = false;
         }
 
         private void lstSavedata_DoubleClick(object sender, EventArgs e) {
-            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text, true, saveFolderPath)) {
+            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), true, saveFolderPath)) {
                 return;
             }
 
@@ -148,14 +152,14 @@ namespace DS3BackupApp {
                 return;
             }
 
-            if (!PathHelper.ValidatePathForAuto(txtBackupFolderPath.Text, saveFolderPath)) {
+            if (!PathHelper.ValidatePathForAuto(txtBackupFolderPath.Text.Trim(), saveFolderPath)) {
                 return;
             }
 
-            SavedataService.AutoBackup(txtBackupFolderPath.Text, saveFolderPath, numMaxAutosave.Value);
+            SavedataService.AutoBackup(txtBackupFolderPath.Text.Trim(), saveFolderPath, numMaxAutosave.Value);
 
             if (cmbProfile.Text.Trim() == AppConstants.AutosaveProfile) {
-                ProfileService.SetSavedata(txtBackupFolderPath.Text, cmbProfile.Text.Trim(), lstSavedata);
+                ProfileService.SetSavedata(txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim(), lstSavedata);
             }
         }
 
@@ -165,7 +169,7 @@ namespace DS3BackupApp {
                 return;
             }
 
-            if (chkAutoBackup.Checked && !PathHelper.ValidatePath(txtBackupFolderPath.Text, false, saveFolderPath)) {
+            if (chkAutoBackup.Checked && !PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), false, saveFolderPath)) {
                 // チェックボックスの状態を元に戻す  
                 chkAutoBackup.CheckedChanged -= chkAutoBackup_CheckedChanged; // イベントを一時的に解除
                 chkAutoBackup.Checked = !chkAutoBackup.Checked;
@@ -187,33 +191,33 @@ namespace DS3BackupApp {
         }
 
         private void cmbSaveprofile_SelectedIndexChanged(object sender, EventArgs e) {
-            if (!IsLoading && !PathHelper.ValidatePath(txtBackupFolderPath.Text, true)) {
+            if (!IsLoading && !IsAccuountChanged && !IsBackupPathChanged && !PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), true)) {
                 cmbSavename.Items.Clear();
                 return;
             }
-            ProfileService.SetSavename(txtBackupFolderPath.Text, cmbSaveprofile.Text.Trim(), cmbSavename);
+            ProfileService.SetSavename(txtBackupFolderPath.Text.Trim(), cmbSaveprofile.Text.Trim(), cmbSavename);
         }
 
         private void cmbProfile_SelectedIndexChanged(object sender, EventArgs e) {
-            if (!IsLoading && !PathHelper.ValidatePath(txtBackupFolderPath.Text, true)) {
+            if (!IsLoading && !IsAccuountChanged && !IsBackupPathChanged && !PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), true)) {
                 cmbProfile.Items.Clear();
                 lstSavedata.Items.Clear();
                 return;
             }
 
-            ProfileService.SetSavedata(txtBackupFolderPath.Text, cmbProfile.Text.Trim(), lstSavedata);
+            ProfileService.SetSavedata(txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim(), lstSavedata);
 
             txtMemo.Text = Properties.Resources.Info_SelectSavedata;
             txtMemo.Enabled = false;
         }
 
         private void txtMemo_Leave(object sender, EventArgs e) {
-            if (string.IsNullOrEmpty(txtBackupFolderPath.Text)) {
+            if (string.IsNullOrEmpty(txtBackupFolderPath.Text.Trim())) {
                 MessageHepler.Error(Properties.Resources.Error_MemoWriteEmptyBackupPath);
                 return;
             }
 
-            string profilePath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text, cmbProfile.Text.Trim());
+            string profilePath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
             if (!PathHelper.ValidatePath(profilePath, true)) {
                 MessageHepler.Error(Properties.Resources.Error_MemoWrite);
                 return;
@@ -227,12 +231,16 @@ namespace DS3BackupApp {
         }
 
         private void btnDeleteSavedata_Click(object sender, EventArgs e) {
-            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text, true)) {
+            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), true)) {
                 return;
             }
 
             string savename = ProfileService.GetSavename(lstSavedata);
-            string backupPath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text, cmbProfile.Text.Trim());
+            if (string.IsNullOrEmpty(savename)) {
+                return;
+            }
+
+            string backupPath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
             if (!PathHelper.ValidatePath(backupPath, true)) {
                 return;
             }
@@ -247,7 +255,7 @@ namespace DS3BackupApp {
         }
 
         private void btnDeleteProfile_Click(object sender, EventArgs e) {
-            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text, true)) {
+            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), true)) {
                 return;
             }
 
@@ -256,7 +264,7 @@ namespace DS3BackupApp {
                 return;
             }
 
-            string backupPath = Path.Combine(txtBackupFolderPath.Text, profile);
+            string backupPath = Path.Combine(txtBackupFolderPath.Text.Trim(), profile);
             if (!PathHelper.ValidatePath(backupPath, true)) {
                 return;
             }
@@ -283,14 +291,21 @@ namespace DS3BackupApp {
 
             string path = Path.Combine(AppConstants.AppDataPathDSIII, cmbAccount.Text.Trim());
             if (Directory.Exists(path)) {
+                IsAccuountChanged = true;
                 saveFolderPath = path;
+                int selectedBackupPathEnd = txtBackupFolderPath.Text.Trim().IndexOf(AppConstants.TopBackupFolder);
+                string selectedBackupPath = txtBackupFolderPath.Text.Trim()[..selectedBackupPathEnd];
+                txtBackupFolderPath.Text = Path.Combine(selectedBackupPath, AppConstants.TopBackupFolder, AppConstants.DarkSoulsIII, cmbAccount.Text.Trim());
+                ProfileService.SetProfile(txtBackupFolderPath.Text.Trim(), cmbSaveprofile, cmbProfile);
+                IsAccuountChanged = false;
+                cmbSavename.Text = "";
             } else {
                 MessageHepler.Error(Properties.Resources.Error_NotFoundAccount);
             }
         }
 
         private void btnChangeName_Click(object sender, EventArgs e) {
-            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text, true)) {
+            if (!PathHelper.ValidatePath(txtBackupFolderPath.Text.Trim(), true)) {
                 return;
             }
 
@@ -313,7 +328,7 @@ namespace DS3BackupApp {
                             continue;
                         }
 
-                        string oldPath = PathHelper.GetBackupPathFromList(oldName, txtBackupFolderPath.Text, cmbProfile.Text.Trim());
+                        string oldPath = PathHelper.GetBackupPathFromList(oldName, txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
                         if (!PathHelper.ValidatePath(oldPath, true)) {
                             return;
                         }
@@ -330,7 +345,7 @@ namespace DS3BackupApp {
                         }
 
                         if (FileSystemHelper.MoveDirectory(oldPath, newPath)) {
-                            ProfileService.SetSavedata(txtBackupFolderPath.Text, cmbProfile.Text.Trim(), lstSavedata);
+                            ProfileService.SetSavedata(txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim(), lstSavedata);
                             MessageHepler.Info(string.Format(Properties.Resources.Info_Rename, oldName, newName));
                             break;
                         } else {
@@ -355,13 +370,13 @@ namespace DS3BackupApp {
                 txtMemo.ScrollBars = ScrollBars.Vertical;
             }
 
-            if (string.IsNullOrEmpty(txtBackupFolderPath.Text)) {
+            if (string.IsNullOrEmpty(txtBackupFolderPath.Text.Trim())) {
                 MessageHepler.Error(Properties.Resources.Error_MemoReadNoBackupPath);
                 return;
             }
 
-            string profilePath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text, cmbProfile.Text.Trim());
-            if(!PathHelper.ValidatePath(profilePath, true)) {
+            string profilePath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
+            if (!PathHelper.ValidatePath(profilePath, true)) {
                 return;
             }
 

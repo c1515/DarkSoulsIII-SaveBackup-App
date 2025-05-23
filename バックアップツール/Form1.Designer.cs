@@ -1,5 +1,5 @@
 ﻿namespace DS3BackupApp {
-    partial class formBackupApp {
+    partial class FormBackupApp {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBackupApp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBackupApp));
             btnBackup = new Button();
             txtBackupFolderPath = new TextBox();
             btnSelectBackupFolder = new Button();
@@ -206,7 +206,7 @@
             btnChangeName.UseVisualStyleBackColor = true;
             btnChangeName.Click += btnChangeName_Click;
             // 
-            // formBackupApp
+            // FormBackupApp
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
@@ -235,7 +235,7 @@
             Controls.Add(btnBackup);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "formBackupApp";
+            Name = "FormBackupApp";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numBackupInterval).EndInit();
