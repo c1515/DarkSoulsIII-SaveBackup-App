@@ -217,7 +217,12 @@ namespace DS3BackupApp {
                 return;
             }
 
-            string profilePath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
+            string savename = ProfileService.GetSavename(lstSavedata);
+            if (string.IsNullOrEmpty(savename)) {
+                return;
+            }
+
+            string profilePath = PathHelper.GetBackupPathFromList(savename, txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
             if (!PathHelper.ValidatePath(profilePath, true)) {
                 MessageHepler.Error(Properties.Resources.Error_MemoWrite);
                 return;
@@ -240,7 +245,7 @@ namespace DS3BackupApp {
                 return;
             }
 
-            string backupPath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
+            string backupPath = PathHelper.GetBackupPathFromList(savename, txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
             if (!PathHelper.ValidatePath(backupPath, true)) {
                 return;
             }
@@ -289,7 +294,7 @@ namespace DS3BackupApp {
                 return;
             }
 
-            string path = Path.Combine(AppConstants.AppDataPathDSIII, cmbAccount.Text.Trim());
+            string path = Path.Combine(AppConstants.AppDataPathDSIII, cmbAccount.Text.Trim());//別ゲーのときはここを変更する
             if (Directory.Exists(path)) {
                 IsAccuountChanged = true;
                 saveFolderPath = path;
@@ -375,7 +380,12 @@ namespace DS3BackupApp {
                 return;
             }
 
-            string profilePath = PathHelper.GetBackupPathFromList(ProfileService.GetSavename(lstSavedata), txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
+            string savename = ProfileService.GetSavename(lstSavedata);
+            if (string.IsNullOrEmpty(savename)) {
+                return;
+            }
+
+            string profilePath = PathHelper.GetBackupPathFromList(savename, txtBackupFolderPath.Text.Trim(), cmbProfile.Text.Trim());
             if (!PathHelper.ValidatePath(profilePath, true)) {
                 return;
             }
